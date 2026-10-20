@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Resource Limiter",
+  "version": "1.6.0",
+  "description": "Turn resource limiting on or off and adjust CPU and network throttling for tabs matching your site rules.",
+  "permissions": ["debugger", "tabs", "storage", "alarms"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Tab Resource Limiter"
+  },
+  "options_page": "options.html"
+}

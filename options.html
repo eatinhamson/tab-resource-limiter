@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tab Resource Limiter — Rules</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 860px; margin: 24px auto; padding: 0 16px; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { padding: 6px 8px; border-bottom: 1px solid #ddd; text-align: left; font-size: 13px; }
+    input[type="text"] { width: 180px; }
+    input[type="number"] { width: 60px; }
+    button { padding: 6px 14px; margin-top: 12px; cursor: pointer; }
+    .hint { color: #666; font-size: 12px; margin-top: 16px; line-height: 1.5; }
+    #saved { color: green; margin-left: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Site rules</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>On</th><th>Hostname contains</th><th>CPU slowdown (×)</th>
+        <th>Network cap</th><th>Discard after (min)</th><th>Background only</th><th></th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+  <button id="add">Add rule</button>
+  <button id="save">Save</button><span id="saved"></span>
+  <p class="hint">
+    CPU slowdown ×3 means the tab runs at one third speed. Network cap limits bandwidth
+    (choose "none" to leave it alone). Discard frees the tab's RAM after N minutes of
+    inactivity (0 = never); the page reloads when you return to it. "Background only"
+    lifts the throttle while the tab is focused.
+  </p>
+  <script src="options.js"></script>
+</body>
+</html>
